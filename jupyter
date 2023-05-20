@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run --rm -ti --name d2l -p 8188:8188 -v `pwd`/study:/root/study sunylab/d2l:1.0
+
