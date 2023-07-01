@@ -2,13 +2,14 @@
 
 - generate docker image
 
-   ``` 
-    docker build . -t sunylab/d2l:1.0 
    ```
+   docker buildx build --push --platform linux/arm64,linux/amd64 -t sunylab/d2l:1.2 .
+   ``` 
+
 
 - start docker jupyter
    ```
-   docker run --rm -ti --name jupyter -p 8188:8188 -v `pwd`/study:/root/study -ti  docker-jupyter:latest 
+   docker run --rm -ti --name jupyter -p 8188:8188 -v `pwd`:/root/study  sunylab/d2l:1.2: 
    ```
 
 - open in browser
